@@ -221,8 +221,8 @@ class TestUnregisterFromActivity:
 class TestActivityCapacity:
     """Tests for activity capacity constraints"""
 
-    def test_activity_capacity_not_exceeded(self, client):
-        """Test that we can track when capacity is approaching"""
+    def test_activity_has_available_spots(self, client):
+        """Test that an activity reports available spots within capacity limits"""
         # Get current participant count
         activities_response = client.get("/activities")
         activities_data = activities_response.json()
